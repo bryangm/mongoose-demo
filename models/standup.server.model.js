@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var standupSchema = new Schema({
-  memberName: String,
-  project: String,
-  workYesterday: String,
-  workToday: String,
-  impediment: String,
+  memberName: { type: String, required: true },
+  project: { type: String, required: true },
+  workYesterday: { type: String, required: true },
+  workToday: { type: String, required: true },
+  impediment: { type: String, required: true, default: 'none' },
   createdOn: { type: Date, default: Date.now }
 });
 

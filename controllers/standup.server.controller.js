@@ -33,7 +33,16 @@ exports.create = function(req, res) {
     impediment: req.body.impediment
   });
 
-  entry.save();
+  entry.schema.path('memberName').validate(function (value) {
+    return value != 'None';
+  }, 'You must select a team member name.');
+
+  entry.save(function(err) {
+    if (err) {
+      var errMsg = 'Error saving standup note. ' + err;
+      res.render('newnote', {title: 'Standiup - New Note (error), message errMsg', message: errMsg })
+    }
+  });
 
   res.redirect(301, '/');
 };

@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://demo:dmb4life@ds042698.mongolab.com:42698/standupmeetingnotes');
+mongoose.connect('mongodb://demo:mongoose@ds042698.mongolab.com:42698/standupmeetingnotes');
 
 var app = express();
 

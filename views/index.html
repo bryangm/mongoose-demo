@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>Test</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    {% for note in notes %}
+    <h1>{{ note.memberName }}</h1>
+    <p>
+      Project: {{ note.project }}<br/>
+      Work Yesterday: {{ note.workYesterday }}<br/>
+      Work Today: {{ note.workToday }}<br/>
+      Impediment: {{ note.impediment }}<br/>
+      Created On: {{ note.createdOn.toDateString() }}
+    </p>
+    {% endfor %}
   </body>
 </html>

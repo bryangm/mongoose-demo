@@ -10,4 +10,4 @@ var standupSchema = new Schema({
   createdOn: { type: Date, default: Date.now }
 });
 
-var noIdSchema = new Schema({ name: String }, { _id: false });
+module.exports = mongoose.model('Standup', standupSchema);
